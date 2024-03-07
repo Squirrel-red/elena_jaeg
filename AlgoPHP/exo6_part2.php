@@ -7,7 +7,7 @@ de valeurs. </p>
 
 <?php
 
-$liste= ["Monsieur", "Madame", "Mademoiselle"];
+$liste= ["Monsieur", "Madame", "Mademoiselle"]; // commentaire
 
 //*echo remplirListeDeroulante($liste);
 
