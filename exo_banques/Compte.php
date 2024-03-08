@@ -78,13 +78,21 @@ public function __construct(string $libelle, float $soldeInitial, string $devise
     }
 
     public function crediter(float $credit){
-        $result=($this->soldeInitial + $credit);
-        return $result;
+        if ($credit > 0 ){
+            $this->soldeInitial+=$credit;
+            return $this->soldeInitial;
+        }
+  
+        else {
+            return "Introduisez le montant positif ! "." <br>";
+        }
+ 
     }
 
     public function debiter(float $debit){
         if ($this->soldeInitial > $debit){
-            $result=($this->soldeInitial - $debit);
+            $this->soldeInitial-= $debit;
+            return $this->soldeInitial;
         }
         else {
             $result= " Solde insuffisant pour débiter ce compte! ";

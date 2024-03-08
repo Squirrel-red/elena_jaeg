@@ -72,7 +72,7 @@ class Titulaire{
 
         return $this;
     }
-    
+//* Comptes = l'ensemble des comptes
     public function getComptes() : array
     {
         return $this->comptes;
@@ -94,20 +94,19 @@ class Titulaire{
     public function ajouterCompte(Compte $compte){
         $this->comptes[]=$compte;
     }
-
-    public function afficherCompte(){
-        $result= "<h1> Comptes de M/Mme ".$this."</h1>";
-        foreach($this->comptes as $compte);
-            $result.= $compte;
-        return $result;
-    }
-    
     public function donnerAge(){
         $dateJour= new DateTime();
         $difference= $this->dateNaissance->diff($dateJour);
         return $difference->format('%Y ans');
 
     }
-
+    public function afficherCompte(){
+        $result= "<h1> Compte de Mme ".$this."</h1>";
+        foreach($this->comptes as $compte);
+            $result.= $compte;
+        return $result;
+    }
+        
+    
 
 }

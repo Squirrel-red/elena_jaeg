@@ -10,7 +10,20 @@ $livA= new Compte("Livret A", 200, "€", $LS);
 $compteCourant= new Compte("Compte courant", 1300, "€", $LS);
 
 //* Affichage
+
 echo $LS->afficherCompte();
-echo $livA->virement($compteCourant, 10);
+echo "----------------------------------------------------------------------------"."<br>";
+echo "Résultats de l'opération:"."<br>";
+echo "--------------------------"."<br>";
+
+//*echo $livA->virement($compteCourant, 20);
+//*echo $livA->debiter(150)."<br>";
+//*echo $livA->crediter(150)."<br>";
+//*echo $compteCourant->virement($livA, 30);
+//*echo $compteCourant->debiter(100)."<br>";
+echo $compteCourant->crediter(100)."<br>";
+echo "----------------------------------------------------------------------------"."<br>";
+echo "Le reste sur les comptes: "."<br>";
+echo "--------------------------"."<br>";
 echo $livA;
 echo $compteCourant;
