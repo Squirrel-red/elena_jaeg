@@ -87,24 +87,28 @@ class Titulaire{
     }
 
     //* On créé les fonctions demandées
+
     public function __toString(){
-        return $this->nom." ".$this->prenom."<br>";
+        return $this->nom." ".$this->prenom." (".$this->ville.", ".$this->donnerAge().")"."<br>";
     }
 
     public function ajouterCompte(Compte $compte){
-        $this->comptes[]=$compte;
+        return $this->comptes[]=$compte;
+
     }
+
     public function donnerAge(){
         $dateJour= new DateTime();
         $difference= $this->dateNaissance->diff($dateJour);
-        return $difference->format('%Y ans');
-
+        return  $difference->format('%Y ans');
     }
     public function afficherCompte(){
-        $result= "<h1> Compte de Mme ".$this."</h1>";
-        foreach($this->comptes as $compte);
-            $result.= $compte;
+        $result= "<h1> Comptes de Mme ".$this."</h1>";
+    //*    foreach($this->comptes as $compte);
+    //*   $result.= $compte;
+         
         return $result;
+
     }
         
     
